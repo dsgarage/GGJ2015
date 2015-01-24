@@ -57,7 +57,7 @@ public class FirstPersonPhoton : Photon.MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (!photonView.isMine) {
+		if (photonView.isMine) {
 			isControllable = true;
 						float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 						float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
