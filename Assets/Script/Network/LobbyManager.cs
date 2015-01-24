@@ -41,8 +41,9 @@ public class LobbyManager : Photon.MonoBehaviour {
 		}
 		if (PhotonNetwork.isMasterClient) {
 			if (GUILayout.Button ("StartGame")) {
-								PhotonNetwork.room.open = false;
-								PhotonNetwork.LoadLevel ("00_Level01");
+					PhotonNetwork.room.open = false;
+					PhotonNetwork.isMessageQueueRunning = false;
+					PhotonNetwork.LoadLevel("00_Level01");
 						}
 				}
 
