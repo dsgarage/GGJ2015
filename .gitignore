@@ -3,3 +3,7 @@
 *.sln
 *.suo
 *.csproj
+*.unityproj
+*.userprefs
+/obj
+
