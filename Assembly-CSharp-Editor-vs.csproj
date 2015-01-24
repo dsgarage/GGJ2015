@@ -84,6 +84,7 @@
      <None Include="Assets\Photon Unity Networking\Demos\DemoBoxes\Resources\eurof_tt.txt" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-Lighted.shader" />
+     <None Include="Assets\Fantasy Skybox FREE\Readme\Readme.txt" />
      <None Include="Assets\_Assts\Toon Character Pack\_Toon Character Pack.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+Add VColor.shader" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
