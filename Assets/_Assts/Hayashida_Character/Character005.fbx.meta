@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 7b7d3133495a21b41b04c5542ebf7888
+guid: e5b3c98cb77fb294bb921ef2d5ab8e28
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: Armature_Character001
     100002: Bone_001_R
     100004: //RootNode
-    100006: Character001
+    100006: Character005
     100008: Chest
     100010: Foot_l
     100012: Foot_R
@@ -32,7 +32,7 @@ ModelImporter:
     400000: Armature_Character001
     400002: Bone_001_R
     400004: //RootNode
-    400006: Character001
+    400006: Character005
     400008: Chest
     400010: Foot_l
     400012: Foot_R
@@ -55,9 +55,9 @@ ModelImporter:
     400046: UpperArm_R
     400048: UpperLeg_L
     400050: UpperLeg_R
-    4300000: Character001
+    4300000: Character005
     9500000: //RootNode
-    13700000: Character001
+    13700000: Character005
   materials:
     importMaterials: 1
     materialName: 0
@@ -268,7 +268,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Character001(Clone)
+    - name: Character005(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -393,7 +393,7 @@ ModelImporter:
       rotation: {x: .0276883151, y: .220163167, z: .000525450218, w: .97506988}
       scale: {x: 1.00000012, y: .99999994, z: 1.00000012}
       transformModified: 1
-    - name: Character001
+    - name: Character005
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
