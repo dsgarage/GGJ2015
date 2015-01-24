@@ -55,13 +55,16 @@ public class LobbyManager : Photon.MonoBehaviour {
 		}
 		if (PhotonNetwork.isMasterClient) {
 			if (GUILayout.Button ("StartGame")) {
-
-				PhotonNetwork.room.open = false;
-				//PhotonNetwork.isMessageQueueRunning = false;
-				PhotonNetwork.LoadLevel("00_Level01");
+				enterGame ();
 						}
 				}
 
+	}
+
+	public void enterGame(){
+		PhotonNetwork.room.open = false;
+		//PhotonNetwork.isMessageQueueRunning = false;
+		PhotonNetwork.LoadLevel("00_Level01");
 	}
 
 	// Update is called once per frame
