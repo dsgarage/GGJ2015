@@ -155,6 +155,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
+     <Compile Include="Assets\Script\AddForceScript.cs" />
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\GravityDirectionScript.cs" />
      <Compile Include="Assets\Script\GravityScript.cs" />

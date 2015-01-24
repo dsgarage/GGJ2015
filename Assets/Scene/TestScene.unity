@@ -249,7 +249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1527409440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d982d19f56dd6894f88ad90b9ba5a0da, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bcfd3c7eb7df4f4b919b5b99f0237dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!23 &1527409442
@@ -480,7 +480,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
