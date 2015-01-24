@@ -60,6 +60,7 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_Assts\Tidy Wave Mesh\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
+     <None Include="Assets\Tidy Tile Mapper\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
@@ -81,6 +82,9 @@
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Unlit-Alpha.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/GGJ2015/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

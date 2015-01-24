@@ -61,6 +61,25 @@
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbody2DViewEditor.cs" />
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbodyViewEditor.cs" />
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonTransformViewEditor.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\Plugins\ITTMPlugin.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TextureManagement\PreviewDictionary.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TextureManagement\TextureDictionary.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyAssetPoolMonitor.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyBlockEditor.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyEditorUtility.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyFileNames.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyMapCreator.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyMessages.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\TidyTooltips.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Logic\WindowHandling\IEditorWindow.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Windows\AssetPoolWindow.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Windows\BlockEditorWindow.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Windows\MapCreatorWindow.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Editor Windows\Update Prompts\UpdateWindow.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Utilities\unitygems.com\whydoidoit.com\FindAndFixBrokenScripts.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Editor\Utilities\unitygems.com\whydoidoit.com\FixMissingScripts.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\Editor\ColorProfileEditor.cs" />
+     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\Editor\StreamingEditor.cs" />
      <Compile Include="Assets\_Assts\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
      <Compile Include="Assets\_Assts\JMO Assets\Cartoon FX\Editor\CFX_InspectorHelpEditor.cs" />
      <Compile Include="Assets\_Assts\JMO Assets\Cartoon FX\Editor\CFX_SpawnSystemEditor.cs" />
@@ -73,6 +92,7 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_Assts\Tidy Wave Mesh\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
+     <None Include="Assets\Tidy Tile Mapper\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
@@ -94,6 +114,9 @@
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Unlit-Alpha.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/GGJ2015/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/GGJ2015/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
@@ -103,17 +126,17 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
- <Reference Include="JMOAssets">
- <HintPath>C:/GGJ2015/Assets/_Assts/JMO Assets/Editor/JMOAssets.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="Newtonsoft.Json">
  <HintPath>C:/GGJ2015/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/GGJ2015/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="JMOAssets">
+ <HintPath>C:/GGJ2015/Assets/_Assts/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
