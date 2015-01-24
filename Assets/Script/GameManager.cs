@@ -4,15 +4,21 @@ using System.Collections;
 /// <summary>
 /// ゲームマネージャ
 /// </summary>
+
 public class GameManager : SingletonMonoBehaviour<GameManager> {
+    public float m_time = 0;
 
-    #region Members
+    private GameObject m_player;
+    private int m_score = 0;
+    private int m_wait = 0;
+    private int m_speed = 0;
+    private int m_jump = 0;
+    private int m_tafness = 0;
+    
 
-    GameObject _player;
+
     public GameObject Player {
-        get {
-            return _player;
-        }
+        get { return m_player; }
     }
 
     #endregion
@@ -20,6 +26,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager> {
     #region System Calls
 
     void Update () {
+        m_score += Time.deltaTime;
 
     }
 
