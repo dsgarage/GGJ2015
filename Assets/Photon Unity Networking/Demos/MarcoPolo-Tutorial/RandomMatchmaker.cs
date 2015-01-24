@@ -23,9 +23,10 @@ public class RandomMatchmaker : Photon.MonoBehaviour
 
     void OnJoinedRoom()
     {
-        GameObject monster = PhotonNetwork.Instantiate("monsterprefab", Vector3.zero, Quaternion.identity, 0);
-        monster.GetComponent<myThirdPersonController>().isControllable = true;
-        myPhotonView = monster.GetComponent<PhotonView>();
+		GameObject player = PhotonNetwork.Instantiate("ossan", new Vector3(0.0f,1.5f,0.0f), Quaternion.identity, 0);
+        player.GetComponent<myThirdPersonController>().isControllable = true;
+		player.GetComponent<ThirdPersonCamera>().enabled = true;
+        myPhotonView = player.GetComponent<PhotonView>();
     }
 
     void OnGUI()
