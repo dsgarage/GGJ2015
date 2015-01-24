@@ -41,7 +41,7 @@ public class LobbyManager : Photon.MonoBehaviour {
 		}
 		if (PhotonNetwork.isMasterClient) {
 			if (GUILayout.Button ("StartGame")) {
-								Application.LoadLevel ("TestScene");
+								PhotonNetwork.LoadLevel ("00_Level01");
 						}
 				}
 
