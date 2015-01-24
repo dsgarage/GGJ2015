@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LobbyManager : Photon.MonoBehaviour {
 
+	private bool isConnected = false;
+
 	// Use this for initialization
 	void Start () {
 		PhotonNetwork.ConnectUsingSettings("0.1");
@@ -27,17 +29,22 @@ public class LobbyManager : Photon.MonoBehaviour {
 		} else {
 			Debug.Log ("Client");		
 		}
+		isConnected = true;
 		//GUILayout.Label (PhotonNetwork.room.playerCount.ToString ());
 	}
 
 
 	void OnGUI(){
 		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+		if (isConnected) {
+			GUILayout.Label ( "Connected : " + PhotonNetwork.room.playerCount.ToString ());		
+		}
 		if (PhotonNetwork.isMasterClient) {
-						if (GUILayout.Button ("StartGame")) {
+			if (GUILayout.Button ("StartGame")) {
 								Application.LoadLevel ("TestScene");
 						}
 				}
+
 	}
 
 	// Update is called once per frame
