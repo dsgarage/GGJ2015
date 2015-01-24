@@ -10,7 +10,6 @@ public class LobbyManager : Photon.MonoBehaviour {
 
 	void OnJoinedLobby()
 	{
-		Debug.Log("JoinRandom");
 		PhotonNetwork.JoinRandomRoom();
 		Debug.Log(PhotonNetwork.connected.ToString());
 	}
@@ -23,20 +22,26 @@ public class LobbyManager : Photon.MonoBehaviour {
 
 	void OnJoinedRoom()
 	{
-
+		if (PhotonNetwork.isMasterClient) {
+			Debug.Log ("Master");		
+		} else {
+			Debug.Log ("Client");		
+		}
 		//GUILayout.Label (PhotonNetwork.room.playerCount.ToString ());
 	}
 
 
 	void OnGUI(){
 		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-		if(GUILayout.Button ("JoinGame")){
-			Application.LoadLevel ("TestScene");
-		}
+		if (PhotonNetwork.isMasterClient) {
+						if (GUILayout.Button ("StartGame")) {
+								Application.LoadLevel ("TestScene");
+						}
+				}
 	}
 
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 }

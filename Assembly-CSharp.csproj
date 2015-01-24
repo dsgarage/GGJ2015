@@ -157,7 +157,9 @@
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\GravityScript.cs" />
      <Compile Include="Assets\Script\Map\Map01.cs" />
+     <Compile Include="Assets\Script\Network\LobbyManager.cs" />
      <Compile Include="Assets\Script\Network\NetworkCharacter.cs" />
+     <Compile Include="Assets\Script\Network\NetworkGameSystem.cs" />
      <Compile Include="Assets\Script\Network\RandomMatchmaker.cs" />
      <Compile Include="Assets\Script\Singleton.cs" />
      <Compile Include="Assets\Script\SingletonMonoBehaviour.cs" />
