@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
-  HostType: 1
+  HostType: 0
   Protocol: 0
   ServerAddress: 
   ServerPort: 5055
-  PreferredRegion: 3
-  AppID: 6fd2f355-c8c8-4bdd-9bc0-78766cf7b03c
+  PreferredRegion: 0
+  AppID: 
   PingCloudServersOnAwake: 0
   RpcList:
   - Chat

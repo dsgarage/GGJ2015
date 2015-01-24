@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{CBD97677-58D8-D13A-96E3-CA6AE71D81F3}</ProjectGuid>
+	<ProjectGuid>{5D3E4BB9-CFA2-6AD3-4E81-BD3EC1C81370}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -56,7 +56,6 @@
      <Compile Include="Assets\Plugins\ChatApi\ChatState.cs" />
      <Compile Include="Assets\Plugins\ChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\Plugins\ChatApi\IChatClientListener.cs" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-Transparent.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-Basic.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
@@ -66,7 +65,6 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_Assts\Tidy Wave Mesh\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
-     <None Include="Assets\Tidy Tile Mapper\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
@@ -92,7 +90,7 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Git/GGJ2015_Tree/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/GGJ2015/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
