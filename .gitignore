@@ -1,9 +1,14 @@
-/Library
-/Temp
-*.sln
-*.suo
+Library
+Temp
+*.svd
+*.userprefs
 *.csproj
+*.pidb
+*.suo
+*.sln
+*.user
 *.unityproj
+*.booproj
 *.userprefs
 /obj
 
