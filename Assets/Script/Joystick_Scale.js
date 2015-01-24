@@ -17,7 +17,7 @@
 @script RequireComponent( GUITexture )
 
 // A simple class for bounding how far the GUITexture will move
-class Boundary 
+class Boundary2 
 {
 	var min : Vector2 = Vector2.zero;
 	var max : Vector2 = Vector2.zero;
