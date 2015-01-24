@@ -60,6 +60,7 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_Assts\Tidy Wave Mesh\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
+     <None Include="Assets\Tidy Tile Mapper\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
