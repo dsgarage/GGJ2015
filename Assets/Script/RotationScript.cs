@@ -6,20 +6,21 @@ public class RotationScript : MonoBehaviour {
     #region Public Methods
 
     /// <summary>
-    /// 衝突した瞬間
-    /// </summary>
-    void OnCollisionEnter (Collision other) {
-        Test();
-    }
-
-    /// <summary>
     /// 回転処理
     /// </summary>
     public void Rotation () {
-        StartCoroutine(RotateAnimation ());
+        StartCoroutine(RotateAnimation());
     }
 
     #endregion
+
+    #region System Calls
+
+    void Start () {}
+
+    #endregion
+
+    #region Private Methods
 
     /// <summary>
     /// 回転用コルーチン
@@ -52,6 +53,8 @@ public class RotationScript : MonoBehaviour {
         }
     }
 
+    #endregion
+
     #region Members
 
     [SerializeField]
@@ -77,8 +80,4 @@ public class RotationScript : MonoBehaviour {
     }
 
     #endregion
-
-    void Test () {
-        Rotation();
-    }
 }
