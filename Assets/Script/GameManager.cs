@@ -6,10 +6,13 @@ using System.Collections;
 /// </summary>
 
 public class GameManager : SingletonMonoBehaviour<GameManager> {
+
+    #region Members
+
     public float m_time = 0;
 
     private GameObject m_player;
-    private int m_score = 0;
+    private float m_score = 0;
     private int m_wait = 0;
     private int m_speed = 0;
     private int m_jump = 0;
