@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{54DEFE9A-4DE0-481D-B4A9-8C42241AC4CB}</ProjectGuid>
+	<ProjectGuid>{ACCC4954-347F-3C1E-8F74-E42CC6E88958}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -155,51 +155,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
-     <Compile Include="Assets\Script\GameManager.cs" />
-     <Compile Include="Assets\Script\GravityDirectionScript.cs" />
-     <Compile Include="Assets\Script\GravityScript.cs" />
-     <Compile Include="Assets\Script\Map\Map01.cs" />
-     <Compile Include="Assets\Script\Singleton.cs" />
-     <Compile Include="Assets\Script\SingletonMonoBehaviour.cs" />
-     <Compile Include="Assets\Script\TimeManager.cs" />
-     <Compile Include="Assets\Script\TimeScaleScript.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\API Examples\LevelGeneration\LevelGenerator.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\API Examples\LevelGeneration\LevelGenerators\PerlinGenerator.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\API Examples\LevelGeneration\Runtime_Demo.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Block.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\BlockMap.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\BlockSet.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\BlockTypes\BlockOrientation.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\BlockTypes\OrientedBlock.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\ExpandingMap.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\FunctionalOverlay\CustomFunctionFields\TidyTarget.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\FunctionalOverlay\TidyFunctionalObject.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\FunctionalOverlay\TidyFunctionalOverlay.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Layering\ChunkSet.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Map.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\MapChunk.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Utility\AssetPool.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Utility\BlockUtilities.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Utility\Pathing\IPathMap.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Utility\Pathing\PathNode.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Utility\Pathing\Pathfinding.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Mapping\Utility\TidyMapBoundObject.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\AnimationHandling\AnimationPackage.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\Entity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityController.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTemplates\PathingEntity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTemplates\PatrollingEntity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTemplates\PlatformerEntity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTypes\FreeRoamPlatformEntity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTypes\OCDPatrollingEntity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTypes\PlatformerPlayer.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Controllers\Controllers\EntityTypes\RandomPathingEntity.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\Example\Example Controller\DigController.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\Example\StreamingRunner.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\Example\StreamingWorld.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\StreamingMap.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\StreamingMapColorProfile.cs" />
-     <Compile Include="Assets\Tidy Tile Mapper\Tidy Streaming Maps\StreamingMapNode.cs" />
+     <Compile Include="Assets\Script\BaseScript.cs" />
      <Compile Include="Assets\_Assts\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets\_Assts\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
      <Compile Include="Assets\_Assts\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
@@ -228,7 +184,6 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_Assts\Tidy Wave Mesh\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
-     <None Include="Assets\Tidy Tile Mapper\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
@@ -254,14 +209,14 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/GGJ2015/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Git/GGJ2015_Tree/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5D3E4BB9-CFA2-6AD3-4E81-BD3EC1C81370}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{CBD97677-58D8-D13A-96E3-CA6AE71D81F3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{A3D03A8F-5F97-9D22-C79D-7FE3E910B0FF}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{82CF03D2-5A3E-2177-1BD9-DC9FACA5410F}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

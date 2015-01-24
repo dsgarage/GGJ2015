@@ -1,9 +1,2 @@
-Library
-Temp
-*.sln
-*.suo
-*.csproj
-*.unityproj
-*.userprefs
-obj
-
+/Library
+/Temp
