@@ -38,6 +38,7 @@ public class PC_Controller : Photon.MonoBehaviour
 	private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
 	
 	public GameObject cameraObject;	// メインカメラへの参照
+
 	
 	// アニメーター各ステートへの参照
 	static int idleState = Animator.StringToHash("Base Layer.Idle");
@@ -69,9 +70,11 @@ public class PC_Controller : Photon.MonoBehaviour
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
-	if (photonView.isMine) {
+
+	
 						float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 						float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
+
 						anim.SetFloat ("Speed", v);							// Animator側で設定している"Speed"パラメタにvを渡す
 						anim.SetFloat ("Direction", h); 						// Animator側で設定している"Direction"パラメタにhを渡す
 						anim.speed = animSpeed;								// Animatorのモーション再生速度に animSpeedを設定する
@@ -81,7 +84,9 @@ public class PC_Controller : Photon.MonoBehaviour
 		
 		
 						// 以下、キャラクターの移動処理
+		if (photonView.isMine) {
 						velocity = new Vector3 (0, 0, v);		// 上下のキー入力からZ軸方向の移動量を取得
+				}
 						// キャラクターのローカル空間での方向に変換
 						velocity = transform.TransformDirection (velocity);
 						//以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
@@ -163,11 +168,13 @@ public class PC_Controller : Photon.MonoBehaviour
 								if (useCurves) {
 										resetCollider ();
 								}
+			if (photonView.isMine) {
 								// スペースキーを入力したらRest状態になる
 								if (Input.GetButtonDown ("Jump")) {
 										anim.SetBool ("Rest", true);
 								}
-						}
+			}
+		}
 		// REST中の処理
 		// 現在のベースレイヤーがrestStateの時
 		else if (currentBaseState.nameHash == restState) {
@@ -177,7 +184,6 @@ public class PC_Controller : Photon.MonoBehaviour
 										anim.SetBool ("Rest", false);
 								}
 						}
-				}
 	}
 	
 
