@@ -70,7 +70,7 @@ public class PC_Controller : Photon.MonoBehaviour
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
-		
+		if (photonView.isMine) {
 		
 		float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 		float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
@@ -183,6 +183,7 @@ public class PC_Controller : Photon.MonoBehaviour
 			if (!anim.IsInTransition (0)) {
 				anim.SetBool ("Rest", false);
 			}
+		}
 		}
 	}
 	
