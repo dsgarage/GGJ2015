@@ -6,6 +6,7 @@ public class LazerScript : MonoBehaviour {
     /// <summary>
     /// オブジェクトのマテリアル
     /// </summary>
+    [SerializeField]
     private Material[] m_mats;
     /// <summary>
     /// プロジェクトから読み込むマテリアル
@@ -41,9 +42,10 @@ public class LazerScript : MonoBehaviour {
 	void Update () 
     {
         renderer.materials = m_mats;
-        vec = this.transform.TransformDirection(setDirection);
+        vec = this.transform.TransformDirection(Vector3.forward);//setDirection);
         if (Physics.Raycast(this.transform.position, vec, out hit, Mathf.Infinity))
         {
+            lineRenderer.material = m_mats[0];
             lineRenderer.SetPosition(0, this.transform.position);
             lineRenderer.SetPosition(1, hit.point + vec);   //不自然さ回避のためマテリアルを意図的に少し埋める
             Debug.Log("hit");
