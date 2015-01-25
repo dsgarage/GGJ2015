@@ -125,9 +125,9 @@ public class FSPlayer : MonoBehaviour
 	void Update ()
 	{
 		// User press Q key
-		if(Input.GetKeyUp(KeyCode.Q)) SwitchSkyBox(-1);
+//		if(Input.GetKeyUp(KeyCode.Q)) SwitchSkyBox(-1);
 		// User press E key
-		if(Input.GetKeyUp(KeyCode.E)) SwitchSkyBox(+1);
+//		if(Input.GetKeyUp(KeyCode.E)) SwitchSkyBox(+1);
 	}
 	
 	void OnTriggerExit(Collider other)
