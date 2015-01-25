@@ -6,7 +6,6 @@ public class SoundPlayScript : MonoBehaviour {
     /// <summary>
     /// サウンド
     /// </summary>
-    [SerializeField]
     private AudioClip sound;
 
     /// <summary>
@@ -14,7 +13,7 @@ public class SoundPlayScript : MonoBehaviour {
     /// </summary>
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.tag == "Player")
+        if (other.collider.name == "Player")
         {
             sound = setSound;
             audio.PlayOneShot(sound);

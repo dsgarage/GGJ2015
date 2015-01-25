@@ -10,8 +10,7 @@ public class LazerScript : MonoBehaviour {
     /// <summary>
     /// プロジェクトから読み込むマテリアル
     /// </summary>
-    [SerializeField]
-    private Material[] mat;
+    private Material mat;
     /// <summary>
     /// ラインレンダラ
     /// </summary>
@@ -33,7 +32,7 @@ public class LazerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        m_mats = mat;//renderer.materials;
+        m_mats = renderer.materials;
         lineRenderer.enabled = true;
         lineRenderer.SetVertexCount(2);
 	}
@@ -41,14 +40,13 @@ public class LazerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        //renderer.materials = m_mats;
-        vec = this.transform.TransformDirection(Vector3.forward);
+        renderer.materials = m_mats;
+        vec = this.transform.TransformDirection(setDirection);
         if (Physics.Raycast(this.transform.position, vec, out hit, Mathf.Infinity))
         {
-            lineRenderer.material = m_mats[0];
             lineRenderer.SetPosition(0, this.transform.position);
             lineRenderer.SetPosition(1, hit.point + vec);   //不自然さ回避のためマテリアルを意図的に少し埋める
-            //Debug.Log("hit");
+            Debug.Log("hit");
         }
 	}
 
