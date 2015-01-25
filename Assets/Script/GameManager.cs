@@ -6,6 +6,9 @@ using System.Collections;
 /// </summary>
 
 public class GameManager : SingletonMonoBehaviour<GameManager> {
+
+    #region Members
+
     public float m_time = 0;
 
     private GameObject m_player;
