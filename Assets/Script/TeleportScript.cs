@@ -8,7 +8,7 @@ public class TeleportScript : MonoBehaviour
     /// <summary>
     /// プレイヤーオブジェクト
     /// </summary>
-    private GameObject m_playerObject;
+    private GameObject[] m_playerObjects;
     /// <summary>
     /// 世界においたテレポートオブジェクトの数
     /// </summary>
@@ -36,11 +36,11 @@ public class TeleportScript : MonoBehaviour
     /// <summary>
     /// 近づき続ける最大時間
     /// </summary>
-    private static float nearMaxSecond = 3.0f;
+    private static float nearMaxSecond = 2.0f;
 
     void Awake()
     {
-        m_playerObject = GameObject.Find("Player");
+        m_playerObjects = GameObject.FindGameObjectsWithTag("Player");
     }
 
     // Use this for initialization
@@ -54,24 +54,28 @@ public class TeleportScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        toPlayerDistance = Vector3.Distance(this.transform.position, m_playerObject.transform.position);
-        //Debug.Log(toPlayerDistance);
-        //近づいたら
-        if (toPlayerDistance <= minDis)
+        m_playerObjects = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < m_playerObjects.Length; i++)
         {
-            nearSecond += Time.deltaTime;
-            if (nearSecond >= nearMaxSecond)
+            toPlayerDistance = Vector3.Distance(this.transform.position, m_playerObjects[i].transform.position);
+            //Debug.Log("toPlayerDistance = " + toPlayerDistance);
+            //近づいたら
+            if (toPlayerDistance <= minDis)
             {
-                //同じ場所にワープしないようにする
-                int rand = (int)Random.Range(0, AllObject.Count);
-                while (oldObject == rand)
+                nearSecond += Time.deltaTime;
+                if (nearSecond >= nearMaxSecond)
                 {
-                    rand = (int)Random.Range(0, AllObject.Count);
+                    //同じ場所にワープしないようにする
+                    int rand = (int)Random.Range(0, AllObject.Count);
+                    while (oldObject == rand)
+                    {
+                        rand = (int)Random.Range(0, AllObject.Count);
+                    }
+                    oldObject = rand;
+                    GameObject tlp = GameObject.Find("TeleportObject_" + rand);
+                    m_playerObjects[i].transform.position = tlp.transform.position + new Vector3(0, 2, 0);
+                    nearSecond = 0;
                 }
-                oldObject = rand;
-                GameObject tlp = GameObject.Find("TeleportObject_" + rand);
-                m_playerObject.transform.position = tlp.transform.position + new Vector3(0, 2, 0);
-                nearSecond = 0;
             }
         }
     }
