@@ -159,6 +159,12 @@ public class FSPlayer : MonoBehaviour
 
 #region Functions
 
+	public void SkyBoxButton(){
+		SwitchSkyBox(+1);
+	}
+
+
+
 	void SwitchSkyBox(int DiffNum)
 	{
 		// update m_CurrentSkyBox
