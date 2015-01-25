@@ -24,8 +24,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager> {
         get { return m_player; }
     }
 
-    #endregion
-
     #region System Calls
 
     void Update () {
