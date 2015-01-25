@@ -15,13 +15,15 @@ public class GravityScript : MonoBehaviour {
     /// <summary>
     /// 触れた瞬間
     /// </summary>
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.collider.name == "Player")
+        Debug.Log("========== Get Collision!! ==========");
+        if (other.collider.tag == "Player")
         {
+            Debug.Log("========== Get PlayerTag!! ==========");
             m_playerObject = other.gameObject;
             m_rigitbody = m_playerObject.GetComponent<Rigidbody>();
-            m_rigitbody.useGravity = setUseGravity;
+            m_rigitbody.useGravity = false;
             //Debug.Log(m_rigitbody.useGravity);
         }
     }
