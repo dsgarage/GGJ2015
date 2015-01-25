@@ -4,6 +4,7 @@ using System.Collections;
 public class NetworkGameSystem : Photon.MonoBehaviour {
 
 	private PhotonView myPhotonView;
+	private bool isConnected = false;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	{
 		GameObject player = PhotonNetwork.Instantiate("Character1", new Vector3(0.0f,1.5f,0.0f), Quaternion.identity, 0);
 		myPhotonView = player.GetComponent<PhotonView>();
+		isConnected = true;
 
 		if (myPhotonView.isMine) {
 			player.gameObject.tag = "Player";
@@ -44,7 +46,9 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	void OnGUI ()
 	{
 		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-
+		if (isConnected) {
+			GUILayout.Label ( "Connected : " + PhotonNetwork.room.playerCount.ToString ());		
+		}
 
 	}
 }
