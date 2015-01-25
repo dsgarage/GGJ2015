@@ -5,8 +5,16 @@ public class LobbyManager : Photon.MonoBehaviour {
 
 	private bool isConnected = false;
 	private string playerName = "GuestAAA";
+	private PhotonView myPhotonView;
 
-	public void Awake(){
+
+	// Use this for initialization
+	void Start () {
+		PhotonNetwork.ConnectUsingSettings("0.1");
+		PhotonNetwork.isMessageQueueRunning = true;
+
+		myPhotonView = PhotonView.Get(this);
+
 		if (PhotonNetwork.playerName==null)
 		{
 			//ランダムにプレイヤーの名前を生成
@@ -18,10 +26,6 @@ public class LobbyManager : Photon.MonoBehaviour {
 			this.playerName = PhotonNetwork.playerName;
 		}
 
-		}
-	// Use this for initialization
-	void Start () {
-		PhotonNetwork.ConnectUsingSettings("0.1");
 	}
 
 	void OnJoinedLobby()
@@ -63,9 +67,28 @@ public class LobbyManager : Photon.MonoBehaviour {
 
 	public void enterGame(){
 		PhotonNetwork.room.open = false;
-		//PhotonNetwork.isMessageQueueRunning = false;
-		PhotonNetwork.LoadLevel("00_Level01");
+		PhotonNetwork.DestroyAll();
+		myPhotonView.RPC("SendGameStartRPC", PhotonTargets.All);
 	}
+
+	[RPC]
+	void SendGameStartRPC()
+	{
+		//メッセージを一時的に遮断.
+		PhotonNetwork.isMessageQueueRunning = false;
+		
+		Application.LoadLevel("00_Level01");
+		
+	} 
+
+	/*
+	private IEnumerator MoveToGameScene()
+	{
+		// Temporary disable processing of futher network messages
+		PhotonNetwork.isMessageQueueRunning = false;
+		Application.LoadLevel("00_Level01");
+	}
+	*/
 
 	// Update is called once per frame
 	void Update () {
