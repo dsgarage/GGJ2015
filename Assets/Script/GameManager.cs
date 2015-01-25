@@ -17,7 +17,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager> {
     private int m_speed = 0;
     private int m_jump = 0;
     private int m_tafness = 0;
-    
+     #endregion
+   
 
 
     public GameObject Player {
