@@ -37,7 +37,7 @@ public class PC_Controller : Photon.MonoBehaviour
 	private Animator anim;							// キャラにアタッチされるアニメーターへの参照
 	private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
 	
-	private GameObject cameraObject;	// メインカメラへの参照
+	public GameObject cameraObject;	// メインカメラへの参照
 	
 	// アニメーター各ステートへの参照
 	static int idleState = Animator.StringToHash("Base Layer.Idle");
@@ -58,6 +58,11 @@ public class PC_Controller : Photon.MonoBehaviour
 		// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
+
+		if (photonView.isMine) {
+			cameraObject.AddComponent<SmoothFollow>();
+		}
+
 	}
 	
 	

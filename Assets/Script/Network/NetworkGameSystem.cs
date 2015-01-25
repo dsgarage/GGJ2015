@@ -31,10 +31,15 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 			Debug.Log ("Client");		
 		}
 
-		GameObject player = PhotonNetwork.Instantiate("PC01", new Vector3(0.0f,1.5f,0.0f), Quaternion.identity, 0);
+		GameObject player = PhotonNetwork.Instantiate("Character1", new Vector3(0.0f,1.5f,0.0f), Quaternion.identity, 0);
 		//player.GetComponent<myThirdPersonController>().isControllable = true;
 		//player.GetComponent<ThirdPersonCamera>().enabled = true;
 		myPhotonView = player.GetComponent<PhotonView>();
+
+		if (myPhotonView.isMine) {
+			player.gameObject.tag = "Player";
+
+		}
 	}
 
 
