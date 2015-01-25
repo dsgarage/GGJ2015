@@ -125,15 +125,9 @@ public class FSPlayer : MonoBehaviour
 	void Update ()
 	{
 		// User press Q key
-		if(Input.GetKeyUp(KeyCode.Q))
-		{
-			SwitchSkyBox(-1);
-		}
+		if(Input.GetKeyUp(KeyCode.Q)) SwitchSkyBox(-1);
 		// User press E key
-		if(Input.GetKeyUp(KeyCode.E))
-		{
-			SwitchSkyBox(+1);
-		}
+		if(Input.GetKeyUp(KeyCode.E)) SwitchSkyBox(+1);
 	}
 	
 	void OnTriggerExit(Collider other)
@@ -145,7 +139,7 @@ public class FSPlayer : MonoBehaviour
     }
 	
 	// OnGUI is called for rendering and handling GUI events.
-	void OnGUI () {
+/*	void OnGUI () {
 		
 		// Show version number
 		GUI.Window(1, new Rect((Screen.width-220), 5, 210, 80), InfoWindow, "Info");
@@ -154,6 +148,8 @@ public class FSPlayer : MonoBehaviour
 		GUI.Window(2, new Rect((Screen.width-220), Screen.height-85, 210, 80), HelpWindow, string.Format("{0:00}/{1:00}",m_CurrentSkyBox+1, m_SkyboxList.Length) + " (" + m_SkyboxList[m_CurrentSkyBox].name +")");
 		
 	}
+*/
+
 	
 #endregion Component Segments
 	
@@ -162,6 +158,12 @@ public class FSPlayer : MonoBehaviour
 // ######################################################################
 
 #region Functions
+
+	public void SkyBoxButton(){
+		SwitchSkyBox(+1);
+	}
+
+
 
 	void SwitchSkyBox(int DiffNum)
 	{

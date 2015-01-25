@@ -14,6 +14,7 @@ public class FloatScript : MonoBehaviour {
     /// <summary>
     /// 浮力
     /// </summary>
+    [SerializeField]
     private Vector3 Float;
 
     /// <summary>
@@ -21,11 +22,11 @@ public class FloatScript : MonoBehaviour {
     /// </summary>
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.name == "Player")
+        if (other.collider.tag == "Player")
         {
-            Float = new Vector3(0, setFloatValue, 0);
+            //Float = new Vector3(0, setFloatValue, 0);
             Physics.gravity = Physics.gravity + Float;
-            //Debug.Log(m_rigitbody.useGravity);
+            Debug.Log(m_rigitbody.useGravity);
         }
     }
 

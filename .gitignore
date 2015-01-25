@@ -6,3 +6,4 @@
 *.unityproj
 *.userprefs
 /obj
+*.asset

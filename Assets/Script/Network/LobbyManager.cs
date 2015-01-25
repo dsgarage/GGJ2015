@@ -4,10 +4,28 @@ using System.Collections;
 public class LobbyManager : Photon.MonoBehaviour {
 
 	private bool isConnected = false;
+	private string playerName = "GuestAAA";
+	private PhotonView myPhotonView;
+
 
 	// Use this for initialization
 	void Start () {
 		PhotonNetwork.ConnectUsingSettings("0.1");
+		PhotonNetwork.isMessageQueueRunning = true;
+
+		myPhotonView = PhotonView.Get(this);
+
+		if (PhotonNetwork.playerName==null)
+		{
+			//ランダムにプレイヤーの名前を生成
+			this.playerName = "Guest" + UnityEngine.Random.Range(1, 9999);
+			//Photonにプレイヤーを登録
+			PhotonNetwork.playerName = this.playerName; 
+		}else{
+			//Photonにプレイヤーを登録
+			this.playerName = PhotonNetwork.playerName;
+		}
+
 	}
 
 	void OnJoinedLobby()
@@ -41,11 +59,36 @@ public class LobbyManager : Photon.MonoBehaviour {
 		}
 		if (PhotonNetwork.isMasterClient) {
 			if (GUILayout.Button ("StartGame")) {
-								Application.LoadLevel ("TestScene");
+				enterGame ();
 						}
 				}
 
 	}
+
+	public void enterGame(){
+		PhotonNetwork.room.open = false;
+		PhotonNetwork.DestroyAll();
+		myPhotonView.RPC("SendGameStartRPC", PhotonTargets.All);
+	}
+
+	[RPC]
+	void SendGameStartRPC()
+	{
+		//メッセージを一時的に遮断.
+		PhotonNetwork.isMessageQueueRunning = false;
+		
+		Application.LoadLevel("00_Level01");
+		
+	} 
+
+	/*
+	private IEnumerator MoveToGameScene()
+	{
+		// Temporary disable processing of futher network messages
+		PhotonNetwork.isMessageQueueRunning = false;
+		Application.LoadLevel("00_Level01");
+	}
+	*/
 
 	// Update is called once per frame
 	void Update () {
