@@ -38,6 +38,8 @@ public class PC_Controller : Photon.MonoBehaviour
 	private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
 	
 	public GameObject cameraObject;	// メインカメラへの参照
+
+	public GameObject	FireArm;
 	
 	
 	// アニメーター各ステートへの参照
@@ -125,6 +127,14 @@ public class PC_Controller : Photon.MonoBehaviour
 				resetCollider ();
 			}
 		}
+
+
+		//FireArm
+			if (Input.GetKey("z")) {
+			GameObject Fire = PhotonNetwork.Instantiate("BOMB", transform.position + Vector3.forward, Quaternion.identity, 0);
+			Fire.rigidbody.AddForce(Vector3.forward * 30 + Vector3.up * 10,ForceMode.VelocityChange);  
+			}
+
 		// JUMP中の処理
 		// 現在のベースレイヤーがjumpStateの時
 		else if (currentBaseState.nameHash == jumpState) {

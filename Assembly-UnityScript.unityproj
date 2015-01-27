@@ -62,6 +62,7 @@
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Projector Multiply.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
+     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_Assts\Tidy Wave Mesh\readme.txt" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
