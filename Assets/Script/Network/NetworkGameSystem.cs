@@ -7,8 +7,8 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		PhotonNetwork.ConnectUsingSettings("0.1");
-		//PhotonNetwork.isMessageQueueRunning = true;
+		PhotonNetwork.ConnectUsingSettings("0.2");
+		PhotonNetwork.isMessageQueueRunning = true;
 	}
 	
 	void OnJoinedLobby()

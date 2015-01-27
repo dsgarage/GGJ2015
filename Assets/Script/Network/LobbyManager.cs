@@ -77,7 +77,7 @@ public class LobbyManager : Photon.MonoBehaviour {
 		//メッセージを一時的に遮断.
 		PhotonNetwork.isMessageQueueRunning = false;
 		
-		Application.LoadLevel("00_Level01");
+		Application.LoadLevel("02_Level02");
 		
 	} 
 

@@ -48,7 +48,7 @@ public class LazerScript : MonoBehaviour {
             lineRenderer.material = m_mats[0];
             lineRenderer.SetPosition(0, this.transform.position);
             lineRenderer.SetPosition(1, hit.point + vec);   //不自然さ回避のためマテリアルを意図的に少し埋める
-            Debug.Log("hit");
+            //Debug.Log("hit");
         }
 	}
 
