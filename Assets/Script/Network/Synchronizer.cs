@@ -14,6 +14,8 @@ public class Synchronizer : Photon.MonoBehaviour {
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 			stream.SendNext(rigidbody.velocity);
+
+			/*
 			// アニメーションの連携
 			anim = GetComponent< Animator >();
 			stream.SendNext(anim.GetFloat("Speed"));
@@ -22,11 +24,13 @@ public class Synchronizer : Photon.MonoBehaviour {
 			stream.SendNext(anim.GetBool("Rest"));
 			stream.SendNext(anim.GetFloat("JumpHeight"));
 			stream.SendNext(anim.GetFloat("GravityControl"));
+			*/
 		} else {
 			//データの受信
 			transform.position = (Vector3)stream.ReceiveNext();
 			transform.rotation = (Quaternion)stream.ReceiveNext();
 			rigidbody.velocity = (Vector3)stream.ReceiveNext();
+			/*
 			anim = GetComponent< Animator >();
 			anim.SetFloat("Speed",(float)stream.ReceiveNext());
 			anim.SetFloat("Direction",(float)stream.ReceiveNext());
@@ -34,6 +38,7 @@ public class Synchronizer : Photon.MonoBehaviour {
 			anim.SetBool("Rest",(bool)stream.ReceiveNext());
 			anim.SetFloat("JumpHeight",(float)stream.ReceiveNext());
 			anim.SetFloat("GravityControl",(float)stream.ReceiveNext());
+			}*/
 		}
 	}
 }
