@@ -4,19 +4,29 @@ using System.Collections;
 
 //Animationの設定を行うスクリプト
 public class Synchronizer : Photon.MonoBehaviour {
-	protected Animator anim;
-	
-	
+	//protected Animator anim;
+
+	private Vector3 correctPlayerPos = Vector3.zero; // We lerp towards this
+	private Quaternion correctPlayerRot = Quaternion.identity; // We lerp towards this
+	private Vector3 correctVelocity = Vector3.zero;
+
+	void Update()
+	{
+		if (!photonView.isMine)
+		{
+			transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
+			transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
+		}
+	}
+
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		// データを送る
-		if (stream.isWriting) {
-			//データの送信
-			if (!photonView.isMine)
-			{
+		if (stream.isWriting)
+		{
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 			stream.SendNext(rigidbody.velocity);
-			} 
+		
 
 			/*
 			// アニメーションの連携
@@ -30,8 +40,13 @@ public class Synchronizer : Photon.MonoBehaviour {
 			*/
 		} else {
 			//データの受信
+			/*
 			transform.position = (Vector3)stream.ReceiveNext();
 			transform.rotation = (Quaternion)stream.ReceiveNext();
+			rigidbody.velocity = (Vector3)stream.ReceiveNext();
+			*/
+			this.correctPlayerPos = (Vector3)stream.ReceiveNext();
+			this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
 			rigidbody.velocity = (Vector3)stream.ReceiveNext();
 			/*
 			anim = GetComponent< Animator >();
