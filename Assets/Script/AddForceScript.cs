@@ -14,12 +14,10 @@ public class AddForceScript : MonoBehaviour {
     /// <summary>
     /// 設定する力ベクトル
     /// </summary>
-    [SerializeField]
     private Vector3 m_forceDirection;
     /// <summary>
     /// 設定する力
     /// </summary>
-    [SerializeField]
     private float m_forcePower;
 
     /// <summary>
@@ -27,14 +25,14 @@ public class AddForceScript : MonoBehaviour {
     /// </summary>
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.tag == "Player")
+        if (other.collider.name == "Player")
         {
-            //m_forceDirection = setDirection;
-            //m_forcePower = setPower;
+            m_forceDirection = setDirection;
+            m_forcePower = setPower;
             m_playerObject = other.gameObject;
             m_rigitbody = m_playerObject.GetComponent<Rigidbody>();
-            m_rigitbody.rigidbody.AddForce(this.transform.TransformDirection(m_forceDirection) * m_forcePower, ForceMode.VelocityChange);
-            Debug.Log(m_playerObject);
+            m_rigitbody.rigidbody.AddForce(m_forceDirection * m_forcePower, ForceMode.VelocityChange);
+            Debug.Log("force");
         }
     }
 
