@@ -11,9 +11,12 @@ public class Synchronizer : Photon.MonoBehaviour {
 		// データを送る
 		if (stream.isWriting) {
 			//データの送信
+			if (!photonView.isMine)
+			{
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 			stream.SendNext(rigidbody.velocity);
+			} 
 
 			/*
 			// アニメーションの連携
