@@ -4,11 +4,21 @@ using System.Collections;
 public class NetworkGameSystem : Photon.MonoBehaviour {
 	
 	private PhotonView myPhotonView;
+	private Vector3 SpawnPos;
 	
 	// Use this for initialization
 	void Start () {
 		//PhotonNetwork.ConnectUsingSettings("0.2");
 		PhotonNetwork.isMessageQueueRunning = true;
+		SpawnPos = new Vector3(Random.Range(-19.0f, 15.0f),4.5f,Random.Range(-30.0f, 16.0f));
+		GameObject player = PhotonNetwork.Instantiate("Character01",SpawnPos, Quaternion.identity, 0);
+		myPhotonView = player.GetComponent<PhotonView>();
+		
+		if (myPhotonView.isMine) {
+			player.gameObject.tag = "Player";
+			
+		}
+
 	}
 	
 	void OnJoinedLobby()
@@ -25,13 +35,14 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	
 	void OnJoinedRoom()
 	{
-		GameObject player = PhotonNetwork.Instantiate("Character01", new Vector3(0.0f,2.5f,0.0f), Quaternion.identity, 0);
+		GameObject player = PhotonNetwork.Instantiate("Character01", new Vector3(0.0f,4.5f,0.0f), Quaternion.identity, 0);
 		myPhotonView = player.GetComponent<PhotonView>();
-		
+		/*
 		if (myPhotonView.isMine) {
 			player.gameObject.tag = "Player";
 			
 		}
+		*/
 	}
 	
 	
@@ -44,7 +55,5 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	void OnGUI ()
 	{
 		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-		
-		
 	}
 }
