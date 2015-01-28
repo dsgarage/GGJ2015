@@ -10,6 +10,7 @@ public class LobbyManager : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PhotonNetwork.automaticallySyncScene = true;
 		PhotonNetwork.ConnectUsingSettings("0.1");
 		PhotonNetwork.isMessageQueueRunning = true;
 
@@ -58,10 +59,12 @@ public class LobbyManager : Photon.MonoBehaviour {
 			GUILayout.Label ( "Connected : " + PhotonNetwork.room.playerCount.ToString ());		
 		}
 		if (PhotonNetwork.isMasterClient) {
-			if (GUILayout.Button ("StartGame")) {
-				enterGame ();
+						if (GUILayout.Button ("StartGame")) {
+								enterGame ();
 						}
-				}
+				} else {
+			GUILayout.Label ( "Waiting a master client...");			
+		}
 
 	}
 
@@ -77,7 +80,7 @@ public class LobbyManager : Photon.MonoBehaviour {
 		//メッセージを一時的に遮断.
 		PhotonNetwork.isMessageQueueRunning = false;
 		
-		Application.LoadLevel("02_Level02");
+		PhotonNetwork.LoadLevel("02_Level02");
 		
 	} 
 
