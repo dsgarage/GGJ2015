@@ -40,6 +40,7 @@ public class PC_Controller : Photon.MonoBehaviour
 	public GameObject cameraObject;	// メインカメラへの参照
 
 	public GameObject	FireArm;
+	public GameObject	SelectedObject;
 	
 	
 	// アニメーター各ステートへの参照
@@ -76,6 +77,8 @@ public class PC_Controller : Photon.MonoBehaviour
 		
 		float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 		float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
+
+		//ifdev UNITY_ANDROID
 		
 			//photonView.RPC("SendFloat", RPCMode.AllBuffered, "dirY", v);
 			//photonView.RPC("SendFloat", RPCMode.AllBuffered, "dirX", h);
