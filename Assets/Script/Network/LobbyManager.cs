@@ -11,7 +11,7 @@ public class LobbyManager : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		PhotonNetwork.automaticallySyncScene = true;
-		PhotonNetwork.ConnectUsingSettings("0.1");
+		PhotonNetwork.ConnectUsingSettings("0.2");
 		PhotonNetwork.isMessageQueueRunning = true;
 
 		myPhotonView = PhotonView.Get(this);
