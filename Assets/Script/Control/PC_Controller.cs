@@ -39,8 +39,13 @@ public class PC_Controller : Photon.MonoBehaviour
 	
 	public GameObject cameraObject;	// メインカメラへの参照
 
+	public GameObject[]	GamePad;
 	public GameObject	FireArm;
 	public GameObject	SelectedObject;
+
+	//character control
+	private float h;
+	private float v;
 	
 	
 	// アニメーター各ステートへの参照
@@ -65,6 +70,7 @@ public class PC_Controller : Photon.MonoBehaviour
 		
 		if (photonView.isMine) {
 			cameraObject.AddComponent<SmoothFollow>();
+			GamePad = GameObject.FindGameObjectsWithTag("Controller");
 		}
 		
 	}
@@ -75,8 +81,10 @@ public class PC_Controller : Photon.MonoBehaviour
 	{
 		if (photonView.isMine) {
 		
-		float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
-		float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
+			if(GamePad == null){
+		h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
+		v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
+			}
 
 		//ifdev UNITY_ANDROID
 		

@@ -36,6 +36,7 @@ var deadZone : Vector2 = Vector2.zero;						// Control when position is output
 var normalize : boolean = false; 							// Normalize output after the dead-zone?
 var position : Vector2; 									// [-1, 1] in x,y
 var tapCount : int;	
+var TargetPlayer : GameObject;
 
 var Action :int;
 
@@ -58,6 +59,8 @@ private var guiCenter : Vector2;							// Center of joystick
 
 private var Size : float = 0.00 ;
 private var Res : float = 0.00;
+
+
 
 function Start()
 {
@@ -273,7 +276,7 @@ function Update()
 
 function Send()
 {
-ActionTarget.SendMessage("TapEvent",Action);
+//ActionTarget.SendMessage("TapEvent",Action);
 //Debug.Log(Action);
 }
 
