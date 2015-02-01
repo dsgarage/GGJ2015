@@ -283,3 +283,7 @@ function Send()
 function TapEvent(TapEvent)
 {
 }
+
+function FindPlayer(){
+	Debug.Log("Find");
+}

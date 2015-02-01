@@ -71,6 +71,12 @@ public class PC_Controller : Photon.MonoBehaviour
 		if (photonView.isMine) {
 			cameraObject.AddComponent<SmoothFollow>();
 			GamePad = GameObject.FindGameObjectsWithTag("Controller");
+
+			//GamePadにインスタンス生成の通知
+			for (int i=0; i < GamePad.Length; i++) {
+				GamePad[i].SendMessage("FindPlayer");
+			}
+
 		}
 		
 	}
