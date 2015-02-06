@@ -9,7 +9,8 @@ using System.Collections;
 
 public class PC_Controller : Photon.MonoBehaviour 
 {
-	
+
+
 	public float animSpeed = 1.5f;				// アニメーション再生速度設定
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
 	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
@@ -39,13 +40,18 @@ public class PC_Controller : Photon.MonoBehaviour
 	
 	public GameObject cameraObject;	// メインカメラへの参照
 
+	public GameObject UI_Object;
 	public GameObject[]	GamePad;
+	//public Joystick_Scale MovePad;
 	public GameObject	FireArm;
 	public GameObject	SelectedObject;
 
 	//character control
-	private float h;
-	private float v;
+	public float h;
+	public float v;
+
+	private vController vPad;
+
 	
 	
 	// アニメーター各ステートへの参照
@@ -57,6 +63,7 @@ public class PC_Controller : Photon.MonoBehaviour
 	// 初期化
 	void Start ()
 	{
+		//vehicle.GetComponent.<XYZ>().controlsEnabled = false;
 		// Animatorコンポーネントを取得する
 		anim = GetComponent<Animator>();
 		// CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）
@@ -70,12 +77,19 @@ public class PC_Controller : Photon.MonoBehaviour
 		
 		if (photonView.isMine) {
 			cameraObject.AddComponent<SmoothFollow>();
+
+			//#if UNITY_ANDROID
 			GamePad = GameObject.FindGameObjectsWithTag("Controller");
+
+			vPad = GamePad[0].GetComponent<vController>();
+			//Joystick_Scale component = GamePad[0].GetComponent<Joystick_Scale> ();
 
 			//GamePadにインスタンス生成の通知
 			for (int i=0; i < GamePad.Length; i++) {
+				//GamePad[i].active = true;
 				GamePad[i].SendMessage("FindPlayer");
 			}
+			//#endif
 
 		}
 		
@@ -87,10 +101,18 @@ public class PC_Controller : Photon.MonoBehaviour
 	{
 		if (photonView.isMine) {
 		
-			if(GamePad == null){
-		h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
-		v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
-			}
+		
+		//h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
+		//v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
+				
+		#if UNITY_ANDROID
+		h = vPad.position.x;
+		v = vPad.position.y;
+				#endif
+		//h = GamePad[0].GetComponent<Joystick_Scale>().position.x;
+		
+
+
 
 		//ifdev UNITY_ANDROID
 		
@@ -231,4 +253,6 @@ public class PC_Controller : Photon.MonoBehaviour
 		col.height = orgColHight;
 		col.center = orgVectColCenter;
 	}
+
+
 }

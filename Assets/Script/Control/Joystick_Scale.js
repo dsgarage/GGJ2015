@@ -12,7 +12,7 @@
 // without moving the graphic
 //////////////////////////////////////////////////////////////
 
-#pragma strict
+
 
 @script RequireComponent( GUITexture )
 
@@ -36,7 +36,7 @@ var deadZone : Vector2 = Vector2.zero;						// Control when position is output
 var normalize : boolean = false; 							// Normalize output after the dead-zone?
 var position : Vector2; 									// [-1, 1] in x,y
 var tapCount : int;	
-var TargetPlayer : GameObject;
+public var TargetPlayer : GameObject;
 
 var Action :int;
 
@@ -59,12 +59,18 @@ private var guiCenter : Vector2;							// Center of joystick
 
 private var Size : float = 0.00 ;
 private var Res : float = 0.00;
+var controller;
 
 
 
 function Start()
 {
+controller = TargetPlayer.GetComponent("PC_Controller");
+//TargetPlayer = GameObject.FindWithTag("Player").GetComponent("PC_Controller");
 
+	//TargetPlayer = GameObject.FindWithTag("Player");
+	//	controller = TargetPlayer.GetComponent(typeof("PC_Controller"));
+	
 	Res = Screen.width;
 	Size = (Res /2048);
 	// Cache this component at startup instead of looking up every frame	
@@ -141,6 +147,14 @@ function LatchedFinger( fingerId : int )
 
 function Update()
 {	
+
+
+	 //vehicle.GetComponent.<XYZ>().controlsEnabled = false;
+	//TargetPlayer.GetComponent.<"PC_Controller">.h = position.x;
+//		controller.h = position.x;
+//		controller.v = position.y;
+		//TargetPlayer.transform.position.x += position.x;
+
 	if ( !enumeratedJoysticks )
 	{
 		// Collect all joysticks in the game, so we can relay finger latching messages
@@ -285,5 +299,9 @@ function TapEvent(TapEvent)
 }
 
 function FindPlayer(){
+	//Player Prefab生成時にSendMessageでプレイヤーの生成を通知されるので受け取ってPlayerを探す
 	Debug.Log("Find");
+	TargetPlayer = GameObject.FindWithTag("Player");
+	controller = TargetPlayer.GetComponent(typeof("PC_Controller"));
+	
 }
