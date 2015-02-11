@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Control\Joystick_Scale.js" />
      <Compile Include="Assets\Script\GUIScale.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\Joystick.js" />
      <Compile Include="Assets\_Assts\Toon Character Pack\Scripts\ClearRagdolls.js" />
@@ -61,6 +60,7 @@
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\_Assts\Toon Character Pack\Shaders\Projector Multiply.shader" />
      <None Include="Assets\_Assts\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\SOOMLA Storefronts Pack - Landscape\README.txt" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
      <None Include="Assets\Plugins\release_history.txt" />

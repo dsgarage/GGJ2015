@@ -6,6 +6,8 @@ public class LobbyManager : Photon.MonoBehaviour {
 	private bool isConnected = false;
 	private string playerName = "GuestAAA";
 	private PhotonView myPhotonView;
+	public	GUIStyle	style;
+	public	GUIStyle	buttonStyle;
 
 
 	// Use this for initialization
@@ -54,16 +56,19 @@ public class LobbyManager : Photon.MonoBehaviour {
 
 
 	void OnGUI(){
-		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+		style.fontSize = (int)(Screen.width * 0.03);
+		buttonStyle.fontSize = (int)(Screen.width * 0.03);
+		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString(),style);
+		//GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
 		if (isConnected) {
-			GUILayout.Label ( "Connected : " + PhotonNetwork.room.playerCount.ToString ());		
+			GUILayout.Label ( "Connected : " + PhotonNetwork.room.playerCount.ToString (),style);		
 		}
 		if (PhotonNetwork.isMasterClient) {
-						if (GUILayout.Button ("StartGame")) {
+						if (GUILayout.Button ("StartGame",buttonStyle)) {
 								enterGame ();
 						}
 				} else {
-			GUILayout.Label ( "Waiting a master client...");			
+			GUILayout.Label ( "Waiting a master client...",style);			
 		}
 
 	}

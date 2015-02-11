@@ -5,6 +5,8 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	
 	private PhotonView myPhotonView;
 	private Vector3 SpawnPos;
+
+	public	GUIStyle	style;
 	
 	// Use this for initialization
 	void Start () {
@@ -54,6 +56,7 @@ public class NetworkGameSystem : Photon.MonoBehaviour {
 	
 	void OnGUI ()
 	{
-		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+		style.fontSize = (int)(Screen.width * 0.03);
+		GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString(),style);
 	}
 }
